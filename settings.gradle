@@ -1,0 +1,15 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'SpringCloudTest'
+
+include 'EurekaServer'
+include 'Productor'
+include 'Customer'
+include 'Gateway'
+include 'ConfigServer'
+
+
+

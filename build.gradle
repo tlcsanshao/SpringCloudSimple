@@ -1,0 +1,52 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+		depedencyManagementPluginVersion = '0.5.3.RELEASE'
+		springCloudVersion = 'Finchley.SR1'
+	}
+	repositories {
+		mavenCentral()
+	}
+	
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("io.spring.gradle:dependency-management-plugin:${depedencyManagementPluginVersion}")
+	}
+}
+
+
+
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	version = '0.0.1'
+	sourceCompatibility = 1.8
+
+	repositories {
+		mavenCentral()
+	}
+
+	apply plugin: 'io.spring.dependency-management'
+
+	gradle.projectsEvaluated {
+		tasks.withType(JavaCompile) {
+			options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+		}
+
+		tasks.withType(GroovyCompile){
+			groovyOptions.encoding="MacRoman"
+		}
+
+		tasks.withType(JavaCompile){
+			options.encoding="UTF-8"
+		}
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+			mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+		}
+	}
+
+}

@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ConfigServer
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://localhost:10080/root/test.git
+    bus:
+      refresh:
+        enabled: true
+
+  rabbitmq: #RabbitMQ相关的配置
+    host: localhost
+    port: 5672
+    username: root
+    password: 123456
+
+server:
+  port: 44480
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://root:123456@localhost:44440/eureka/
+
