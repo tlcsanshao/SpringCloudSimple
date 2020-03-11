@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication
 @EnableEurekaServer
 public class SpringCloudTestApplication {
-//test abc
+//remove abc
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCloudTestApplication.class, args);
 	}
