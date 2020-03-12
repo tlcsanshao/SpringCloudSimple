@@ -1,10 +1,10 @@
 spring:
   application:
-    name: Customer
+    name: Turbine
 
 
 server:
-  port: 33333
+  port: 33340
 
 eureka:
   instance:
@@ -26,3 +26,10 @@ management:
     web:
       exposure:
         include: hystrix.stream
+
+turbine:
+  appConfig: Productor,Customer
+  aggregator:
+    clusterConfig: default
+  cluster-name-expression: new String("default")
+  instanceUrlSuffix: hystrix.stream

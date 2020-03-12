@@ -28,4 +28,7 @@ project(':hdt_Productor').projectDir =file('hystrix-dashboard-turbine/Productor'
 include 'hdt_Customer'
 project(':hdt_Customer').projectDir =file('hystrix-dashboard-turbine/Customer')
 
+include 'hdt_Turbine'
+project(':hdt_Turbine').projectDir =file('hystrix-dashboard-turbine/Turbine')
+
 

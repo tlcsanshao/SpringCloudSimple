@@ -31,4 +31,12 @@
 * 访问customer服务：localhost:33333/hystrix
 * 在页面中的输入框中输入 localhost:33333/hystrix.stream
 * 向Customer微服务发送请求之后，会有数据更新。
+3. 在Productor中加入dashboard监控
+* 由于此案例中Productor没有调用其他微服务应用，所以没有数值
+4. 新建一个Turbine模块，注册到EurekaServer，引入相关的依赖，加入注解，填写配置
+* 使用localhost:{turbinePort}/hystrix进入hystrix页面
+* 在输入框中输入 localhost:33340/turbine.stream 显示集成页面。
+
+#### spring-cloud-config
+
 
