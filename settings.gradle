@@ -3,13 +3,29 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'SpringCloudTest'
+rootProject.name = 'SpringCloudSimple'
 
-include 'EurekaServer'
-include 'Productor'
-include 'Customer'
-include 'Gateway'
-include 'ConfigServer'
+include 'sce_EurekaServer'
+project(':sce_EurekaServer').projectDir =file('spring-cloud-eureka/EurekaServer')
 
+
+include 'epc_EurekaServer'
+project(':epc_EurekaServer').projectDir =file('eureka-productor-customer/EurekaServer')
+
+include 'epc_Productor'
+project(':epc_Productor').projectDir =file('eureka-productor-customer/Productor')
+
+include 'epc_Customer'
+project(':epc_Customer').projectDir =file('eureka-productor-customer/Customer')
+
+
+include 'hdt_EurekaServer'
+project(':hdt_EurekaServer').projectDir =file('hystrix-dashboard-turbine/EurekaServer')
+
+include 'hdt_Productor'
+project(':hdt_Productor').projectDir =file('hystrix-dashboard-turbine/Productor')
+
+include 'hdt_Customer'
+project(':hdt_Customer').projectDir =file('hystrix-dashboard-turbine/Customer')
 
 

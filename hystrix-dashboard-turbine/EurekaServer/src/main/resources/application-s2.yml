@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: EurekaServer
+  security:
+    basic:
+      enabled: true
+    user:
+      name: root
+      password: 123456
+
+server:
+  port: 11112
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://root:123456@localhost:11111/eureka/,http://root:123456@localhost:11113/eureka/

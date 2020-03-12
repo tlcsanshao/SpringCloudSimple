@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: CustomerHystrixDashboard
+
+
+server:
+  port: 33333
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://root:123456@localhost:11110/eureka/
+
+#熔断器
+feign:
+  hystrix:
+    enabled: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
