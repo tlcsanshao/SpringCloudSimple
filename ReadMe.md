@@ -39,4 +39,12 @@
 
 #### spring-cloud-config
 
+#### spring-cloud-zuul
+   zuul网管功能，对发往网管的请求进行转发。
+1. 新建一个Gateway模块，注册到EurekaServer上。
+2. 依赖+配置+注解。
+3. 配置转发规则，通过serviceId将发往Gateway的请求转发到具体的service上，如果存在多个service，zuul会自动进行负载均衡。
+4. 默认转发规则：如果不进行路由的配置，会有一套默认转发规则，{gw_ip}:{gw_port}/serviceId/** ===> {service_ip}:{service_port}/**
+
+
 

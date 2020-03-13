@@ -32,3 +32,11 @@ include 'hdt_Turbine'
 project(':hdt_Turbine').projectDir =file('hystrix-dashboard-turbine/Turbine')
 
 
+include 'spz_EurekaServer'
+project(':spz_EurekaServer').projectDir =file('spring-cloud-zuul/EurekaServer')
+
+include 'spz_Gateway'
+project(':spz_Gateway').projectDir =file('spring-cloud-zuul/Gateway')
+
+include 'spz_Customer'
+project(':spz_Customer').projectDir =file('spring-cloud-zuul/Customer')
