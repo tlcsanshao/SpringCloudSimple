@@ -1,0 +1,19 @@
+apply plugin: 'org.springframework.boot'
+
+
+jar {
+	baseName = 'Customer'
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'org.springframework.cloud:spring-cloud-starter-config'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+	implementation 'com.spring4all:swagger-spring-boot-starter:1.9.0.RELEASE'
+//	compile group: 'com.spring4all', name: 'swagger-spring-boot-starter', version: '1.9.0.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}

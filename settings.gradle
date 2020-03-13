@@ -40,3 +40,10 @@ project(':spz_Gateway').projectDir =file('spring-cloud-zuul/Gateway')
 
 include 'spz_Customer'
 project(':spz_Customer').projectDir =file('spring-cloud-zuul/Customer')
+
+
+include 'scs_EurekaServer'
+project(':scs_EurekaServer').projectDir =file('spring-cloud-swagger2/EurekaServer')
+
+include 'scs_Customer'
+project(':scs_Customer').projectDir =file('spring-cloud-swagger2/Customer')
